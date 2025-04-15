@@ -118,6 +118,8 @@
 - hostnamectl set-hostname hq-srv.au-team.irpo
 - newgrp
 
+![image](https://github.com/user-attachments/assets/c5295ca7-1244-4ed5-af7d-306b31663591)
+
 ------------------------ HQ‑CLI ------------------------
 
 - hostnamectl set-hostname hq-cli.au-team.irpo
@@ -130,6 +132,7 @@
 
 
 
+---Задание 2. Настройка IP‑адресации----
 
 
 
