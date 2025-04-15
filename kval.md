@@ -54,5 +54,26 @@
 
 Стало: ![image](https://github.com/user-attachments/assets/9fc5e769-7d3e-45c9-b7fa-a9f76d72d374)
 
+далее необходимо сохранить изменения, для этого зажимаете 
+
+- ctrl+s #это для сохранения файла
+- ctrl+x #для выхода из файла
+
+Далее необходимой перейти в файл
+
+- nano /etc/resolv.conf
+
+Было: ![image](https://github.com/user-attachments/assets/474f7d94-6662-4ebb-b6d5-38af478f5a36)
+
+и удалить все строки, который там написаны 
+
+- alt+t #это можно зажать если в файле много строк и вам лень их стирать, это удалит все строки файла
+- nameserver 1.1.1.1
+
+Стало: ![image](https://github.com/user-attachments/assets/b750accb-0c55-4c45-b9f4-c99a9dc7106b)
+
+
+
+
 
 
