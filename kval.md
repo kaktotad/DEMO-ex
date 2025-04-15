@@ -160,14 +160,86 @@
 - hostnamectl set-hostname br-srv.au-team.irpo
 - newgp
 
+. 
 
+. 
+
+. 
+
+. 
+
+. 
+
+.
+
+.
+
+.
+
+.
+
+.
 
 ---Задание 2. Настройка IP‑адресации----
 
+#Настройка IP адресации начинаеться с ISP, перейдите в файл настройки сетевых интерфейсов 
+
+- nano /etc/network/interfaces
+
+  и допишите или измените конфигурацию так что бы по итогу она выглядела как на примерах
+  
+------------------------ ISP ------------------------
+
+- auto ens192
+- iface ens192 inet dhcp
+
+- auto ens224
+- iface ens224 inet static
+- address 172.16.4.2
+- netmask 255.255.255.240
+
+- auto ens256
+- iface ens256 inet static
+- address 172.16.5.2
+- netmask 255.255.255.240
 
 
+------------------------ HQ-RTR ------------------------
 
+- auto ens192
+- iface ens192 inet static
+- address 172.16.4.2
+- netmask 255.255.255.240
+    
+------------------------ HQ-CLI ------------------------
 
+- auto ens192
+- iface ens192 inet static
+- address 192.168.200.2
+- netmask 255.255.255.240
+- gateway 192.168.200.1
+- dns-nameservers 192.168.100.2
+
+------------------------ HQ-SRV ------------------------
+
+- auto ens192
+- iface ens192 inet static
+- address 192.168.100.2
+- netmask 255.255.255.192
+- gateway 192.168.100.1
+
+------------------------ BR-RTR ------------------------
+- auto ens192
+- iface ens192 inet static
+- address 172.16.5.2
+- netmask 255.255.255.240
+
+------------------------ BR-SRV ------------------------
+- auto ens192
+- iface ens192 inet static
+- address 192.168.0.2
+- netmask 255.255.255.224
+- gateway 192.168.0.1
 
 
 
