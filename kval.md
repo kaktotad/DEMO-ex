@@ -91,5 +91,49 @@
 
 
 
+------------------------Переходим уже к выполнению заданий--------------------
+
+--- Задание 1
+---- Настройте имена устройств согласно топологии. Используйте полное доменное имя 
+
+
+------------------------ ISP ------------------------
+
+- hostnamectl set-hostname isp.au-team.irpo
+- newgrp
+
+------------------------ HQ‑RTR ------------------------
+
+- hostnamectl set-hostname hq-rtr.au-team.irpo
+- newgrp
+
+------------------------ BR‑RTR ------------------------
+
+- hostnamectl set-hostname br-rtr.au-team.irpo
+- newgrp
+
+------------------------ HQ‑SRV ------------------------
+
+- hostnamectl set-hostname hq-srv.au-team.irpo
+- newgrp
+
+------------------------ HQ‑CLI ------------------------
+
+- hostnamectl set-hostname hq-cli.au-team.irpo
+- newgrp
+
+------------------------ BR‑SRV ------------------------
+
+- hostnamectl set-hostname br-srv.au-team.irpo
+- newgp
+
+
+
+
+
+
+
+
+
 
 
