@@ -59,6 +59,9 @@
 - ctrl+s #это для сохранения файла
 - ctrl+x #для выхода из файла
 
+
+------------------------ Настройка всех роутеров (HR-RTR, ISP, BR-RTR) ------------------------
+
 Далее необходимой перейти в файл
 
 - nano /etc/resolv.conf
@@ -71,6 +74,20 @@
 - nameserver 1.1.1.1
 
 Стало: ![image](https://github.com/user-attachments/assets/b750accb-0c55-4c45-b9f4-c99a9dc7106b)
+
+Далее переходим в файл 
+
+- nano /etc/sysctl.conf
+
+найти строку 
+- net.ipv4.ip_forward=0
+
+Было: ![image](https://github.com/user-attachments/assets/5b086568-6a29-41a2-8467-e5fd08ec395a)
+
+и привести ее к виду (удалить знак (#) и указать в конце цифру (1) )
+- net.ipv4.ip_forward=1
+
+Стало: ![image](https://github.com/user-attachments/assets/bfd8fb86-d2fd-4244-8e62-b3b4c70d6397)
 
 
 
