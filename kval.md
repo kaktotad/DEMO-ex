@@ -191,12 +191,17 @@
 ------------------------ ISP ------------------------
 
  auto ens192
+ 
  iface ens192 inet dhcp
 
  auto ens224
+ 
  iface ens224 inet static
+ 
  address 172.16.4.2
+ 
  netmask 255.255.255.240
+ 
 
  auto ens256
  iface ens256 inet static
