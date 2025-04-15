@@ -1,6 +1,6 @@
 ----------------------- Методичка на квал. Для самых красивых ------------------------
 
-![image](https://github.com/user-attachments/assets/749b94c2-fa94-409a-aadf-1462c04548ab)
+![image](https://github.com/user-attachments/assets/e9b2eb1c-568a-46a3-ac47-1cf0f7f5ce1b)
 
 
 Методичка написана предполагая что вы умеете читать. ( ЧИТАЙТЕ ТЕКСТ, который написан тут!!!)
