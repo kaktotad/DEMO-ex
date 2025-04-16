@@ -286,81 +286,76 @@
 
 ---
 
+🌐 ISP
+```
+auto ens192
+iface ens192 inet dhcp
+
+auto ens224
+iface ens224 inet static
+address 172.16.4.1
+netmask 255.255.255.240
+
+auto ens256
+iface ens256 inet static
+address 172.16.5.1
+netmask 255.255.255.240
+```
+
+📡 HQ-RTR
+```
+auto ens192
+iface ens256 inet static
+address 172.16.4.2
+netmask 255.255.255.240
+gateway 172.16.4.1
+
+auto ens224
+iface ens224 inet static
+address 192.168.100.1
+netmask 255.255.255.192
+```
+
+📡 BR-RTR
+```
+auto ens224
+iface ens224 inet static
+address 172.16.5.2
+netmask 255.255.255.240
+gateway 172.16.5.1
+
+auto ens192
+iface ens192 inet static
+address 192.168.0.1
+netmask 255.255.255.224
+```
+
 🖥️ HQ-SRV
 ```
 auto ens192
 iface ens192 inet static
-    address 192.168.100.2
-    netmask 255.255.255.192
-    gateway 192.168.100.1
+address 192.168.100.62
+netmask 255.255.255.192
+gateway 192.168.100.1
 ```
 
 🖥️ HQ-CLI
 ```
 auto ens192
 iface ens192 inet static
-    address 192.168.200.2
-    netmask 255.255.255.240
-    gateway 192.168.200.1
-    dns-nameservers 192.168.100.2
-```
-
-
-📡 HQ-RTR
-```
-auto ens224
-iface ens224 inet static
-    address 192.168.100.1
-    netmask 255.255.255.192
-
-auto ens256
-iface ens256 inet static
-    address 172.16.4.2
-    netmask 255.255.255.240
-
-auto ens192
-iface ens192 inet static
-    address 192.168.200.1
-    netmask 255.255.255.240
-```
-
-
-📡 BR-RTR
-```
-auto ens224
-iface ens224 inet static
-    address 172.16.5.2
-    netmask 255.255.255.240
-
-auto ens192
-iface ens192 inet static
-    address 192.168.0.1
-    netmask 255.255.255.224
+address 192.168.200.2
+netmask 255.255.255.240
+gateway 192.168.200.1
+dns-nameservers 192.168.100.2
 ```
 
 🖥️ BR-SRV
 ```
 auto ens192
 iface ens192 inet static
-    address 192.168.0.2
-    netmask 255.255.255.224
-    gateway 192.168.0.1
-```
-
-🌐 ISP
-```
-auto ens160
-iface ens160 inet dhcp
-
-auto ens192
-iface ens192 inet static
-    address 172.16.4.1
-    netmask 255.255.255.240
-
-auto ens256
-iface ens256 inet static
-    address 172.16.5.1
-    netmask 255.255.255.240
+address 192.168.0.2
+netmask 255.255.255.224
+gateway 192.168.0.1
 ```
 </details>
 
