@@ -281,14 +281,21 @@
 </details>
 <br/>
 
-<details> <summary>Конфигурационные файлы адресации для всех устройств</summary>
+<details>
+<summary>Конфигурационные файлы адресации для всех устройств</summary>
+
+---
 
 🖥️ HQ-SRV
+```
 auto ens192
 iface ens192 inet static
     address 192.168.100.2
     netmask 255.255.255.192
     gateway 192.168.100.1
+```
+
+```
 🖥️ HQ-CLI
 auto ens192
 iface ens192 inet static
@@ -296,6 +303,9 @@ iface ens192 inet static
     netmask 255.255.255.240
     gateway 192.168.200.1
     dns-nameservers 192.168.100.2
+```
+
+```
 📡 HQ-RTR
 auto ens224
 iface ens224 inet static
@@ -311,6 +321,9 @@ auto ens192
 iface ens192 inet static
     address 192.168.200.1
     netmask 255.255.255.240
+```
+
+```
 📡 BR-RTR
 auto ens224
 iface ens224 inet static
@@ -321,12 +334,18 @@ auto ens192
 iface ens192 inet static
     address 192.168.0.1
     netmask 255.255.255.224
+```
+
+```
 🖥️ BR-SRV
 auto ens192
 iface ens192 inet static
     address 192.168.0.2
     netmask 255.255.255.224
     gateway 192.168.0.1
+```
+
+```
 🌐 ISP
 auto ens160
 iface ens160 inet dhcp
@@ -340,6 +359,7 @@ auto ens256
 iface ens256 inet static
     address 172.16.5.1
     netmask 255.255.255.240
+```
 </details>
 
 ## ✔️ Задание 2
