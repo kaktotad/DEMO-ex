@@ -30,7 +30,8 @@ sudo sed -i '/^net.ipv4.ip_forward/d' /etc/sysctl.conf
 echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf > /dev/null
 ```
 </details>
-
+<details>
+<summary>Длинный способ</summary>
 Для того что бы вы могли устанавливать пакеты из интернета, скачивать все пакеты из интернета, необходимо отключить проверку пакетов через cdrom зайдя по пути
 
 - nano /etc/apt/sources.list
@@ -57,6 +58,7 @@ echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf > /dev/null
 - net.ipv4.ip_forward=1
 
 Стало: ![image](https://github.com/user-attachments/assets/bfd8fb86-d2fd-4244-8e62-b3b4c70d6397)
+</details>
 
 > [!NOTE]
 > **Для удобства проверки адресации можно использовать:**
