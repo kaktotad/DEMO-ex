@@ -250,7 +250,7 @@
 Конфигурация файла на устроуйстве **`ISP`**:
 
 <p align="left">
-  <img src="https://github.com/Flicks1383/Demo2025_debian/blob/main/Module1/ISP_NETWORK.jpg" />
+  <img src="https://github.com/user-attachments/assets/c7f37c60-477f-4e84-b624-fbc654e40978" />
 </p>
 <br/>
 
