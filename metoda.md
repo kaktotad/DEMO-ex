@@ -252,7 +252,6 @@
 <p align="left">
   <img src="https://github.com/user-attachments/assets/c7f37c60-477f-4e84-b624-fbc654e40978" />
 </p>
-
 <br/>
 
 Конфигурация файла на устроуйстве **`BR-RTR`**:
@@ -275,16 +274,13 @@
 <p align="left">
   <img src="https://github.com/user-attachments/assets/614864fd-19fc-44bd-9044-d2b9ad4baa46" />
 </p>
-```
-echo net.ipv4.ip_forward=1 > /etc/sysctl.conf
-```
 <br/>
 
 ## Настройка адресации для устройств `HQ-RTR` и `HQ-CLI` будет произведена позже, по ходу выполнения заданий.
 
 </details>
 <br/>
-
+<details> <summary>Конфигурационные файлы адресации для всех устройств</summary>
 
 ## ✔️ Задание 2
 
