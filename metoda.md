@@ -295,8 +295,8 @@ iface ens192 inet static
     gateway 192.168.100.1
 ```
 
-```
 🖥️ HQ-CLI
+```
 auto ens192
 iface ens192 inet static
     address 192.168.200.2
@@ -305,8 +305,9 @@ iface ens192 inet static
     dns-nameservers 192.168.100.2
 ```
 
-```
+
 📡 HQ-RTR
+```
 auto ens224
 iface ens224 inet static
     address 192.168.100.1
@@ -323,8 +324,9 @@ iface ens192 inet static
     netmask 255.255.255.240
 ```
 
-```
+
 📡 BR-RTR
+```
 auto ens224
 iface ens224 inet static
     address 172.16.5.2
@@ -336,8 +338,8 @@ iface ens192 inet static
     netmask 255.255.255.224
 ```
 
-```
 🖥️ BR-SRV
+```
 auto ens192
 iface ens192 inet static
     address 192.168.0.2
@@ -345,8 +347,8 @@ iface ens192 inet static
     gateway 192.168.0.1
 ```
 
-```
 🌐 ISP
+```
 auto ens160
 iface ens160 inet dhcp
 
