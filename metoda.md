@@ -257,14 +257,14 @@
 Конфигурация файла на устроуйстве **`BR-RTR`**:
 
 <p align="left">
-  <img src="https://github.com/Flicks1383/Demo2025_debian/blob/main/Module1/BR-RTR_NETWORK.jpg" />
+  <img src="https://github.com/user-attachments/assets/17e96241-cdd6-4c9f-a52b-fb5e4f6d7859" />
 </p>
 <br/>
 
 Конфигурация файла на устроуйстве **`BR-SRV`**:
 
 <p align="left">
-  <img src="https://github.com/Flicks1383/Demo2025_debian/blob/main/Module1/BR-SRV_NETWORK.jpg" />
+  <img src="https://github.com/user-attachments/assets/d426ee0b-cee4-498e-bce4-daf9db69ff64" />
 </p>
 <br/>
 
@@ -272,7 +272,7 @@
 Конфигурация файла на устроуйстве **`HQ-SRV`**:
 
 <p align="left">
-  <img src="https://github.com/Flicks1383/Demo2025_debian/blob/main/Module1/HQ-SRV_NETWORK.jpg" />
+  <img src="https://github.com/user-attachments/assets/614864fd-19fc-44bd-9044-d2b9ad4baa46" />
 </p>
 <br/>
 
