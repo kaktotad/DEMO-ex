@@ -12,44 +12,46 @@
 
 <br/>
 
+------------------------------------------НА ВСЕХ МАШИНАХ--------------------------------------------------
+<details>
+<summary>Простой способ</summary>
+---
+  
+```
+sudo sed -i 's/^[^#]/#&/' /etc/apt/sources.list
+```
+
+```
+echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf > /dev/null
+```
+
+```
+sudo sed -i '/^net.ipv4.ip_forward/d' /etc/sysctl.conf
+echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf > /dev/null
+```
+</details>
+
 Для того что бы вы могли устанавливать пакеты из интернета, скачивать все пакеты из интернета, необходимо отключить проверку пакетов через cdrom зайдя по пути
 
 - nano /etc/apt/sources.list
 
 и закомментировать находящуюся там строку (поставить знак #) перед каждой строчкой.
 
-Было: ![image](https://github.com/user-attachments/assets/07147a31-418d-4d9c-b012-b54e40d68ac4)
-
 Стало: ![image](https://github.com/user-attachments/assets/9fc5e769-7d3e-45c9-b7fa-a9f76d72d374)
-
-далее необходимо сохранить изменения, для этого зажимаете 
-
-- ctrl+s #это для сохранения файла
-- ctrl+x #для выхода из файла
-
-
------------------------- Настройка всех роутеров (HR-RTR, ISP, BR-RTR) ------------------------
 
 Далее необходимой перейти в файл
 
 - nano /etc/resolv.conf
-
-Было: ![image](https://github.com/user-attachments/assets/474f7d94-6662-4ebb-b6d5-38af478f5a36)
-
-и удалить все строки, который там написаны 
 
 - nameserver 1.1.1.1
 
 Стало: ![image](https://github.com/user-attachments/assets/b750accb-0c55-4c45-b9f4-c99a9dc7106b)
 
 Далее переходим в файл 
-
 - nano /etc/sysctl.conf
 
 найти строку 
 - net.ipv4.ip_forward=0
-
-Было: ![image](https://github.com/user-attachments/assets/5b086568-6a29-41a2-8467-e5fd08ec395a)
 
 и привести ее к виду (удалить знак (#) и указать в конце цифру (1) )
 - net.ipv4.ip_forward=1
