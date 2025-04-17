@@ -364,7 +364,7 @@ netmask 255.255.255.240
 📡 HQ-RTR
 ```
 auto ens192
-iface ens256 inet static
+iface ens192 inet static
 address 172.16.4.2
 netmask 255.255.255.240
 gateway 172.16.4.1
@@ -377,14 +377,14 @@ netmask 255.255.255.192
 
 📡 BR-RTR
 ```
-auto ens224
-iface ens224 inet static
+auto ens192
+iface ens192 inet static
 address 172.16.5.2
 netmask 255.255.255.240
 gateway 172.16.5.1
 
-auto ens192
-iface ens192 inet static
+auto ens224
+iface ens224 inet static
 address 192.168.0.1
 netmask 255.255.255.224
 ```
