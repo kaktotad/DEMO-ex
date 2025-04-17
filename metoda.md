@@ -330,7 +330,7 @@ echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf > /dev/null
 </details>
 
 <details>
-<summary><strong>Конфигурационные файлы адресации для всех устройств</strong>strong></summary>
+<summary><strong>Конфигурационные файлы адресации для всех устройств</strong></summary>
   
 ---
 1 и 2 пункт выполняем на всех машинах
