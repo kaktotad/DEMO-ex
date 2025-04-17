@@ -14,23 +14,6 @@
 
 ------------------------------------------ПРЕДНАСТРОЙКА НА ВСЕХ МАШИНАХ--------------------------------------------------
 <details>
-<summary>Простой способ</summary>
----
-  
-```
-sudo sed -i 's/^[^#]/#&/' /etc/apt/sources.list
-```
-
-```
-echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf > /dev/null
-```
-
-```
-sudo sed -i '/^net.ipv4.ip_forward/d' /etc/sysctl.conf
-echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf > /dev/null
-```
-</details>
-<details>
 <summary>Длинный способ</summary>
 Для того что бы вы могли устанавливать пакеты из интернета, скачивать все пакеты из интернета, необходимо отключить проверку пакетов через cdrom зайдя по пути
 
