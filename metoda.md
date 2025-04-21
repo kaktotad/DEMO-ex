@@ -358,6 +358,14 @@ address 192.168.100.1
 netmask 255.255.255.192
 ```
 
+```
+systemctl restart networking
+```
+
+```
+ip -c a 
+```
+
 📡 BR-RTR
 ```
 auto ens192
@@ -371,7 +379,12 @@ iface ens224 inet static
 address 192.168.0.1
 netmask 255.255.255.224
 ```
-
+```
+systemctl restart networking
+```
+```
+ip -c a 
+```
 🖥️ HQ-SRV
 ```
 auto ens192
@@ -379,6 +392,12 @@ iface ens192 inet static
 address 192.168.100.62
 netmask 255.255.255.192
 gateway 192.168.100.1
+```
+```
+systemctl restart networking
+```
+```
+ip -c a 
 ```
 
 🖥️ HQ-CLI
@@ -390,6 +409,12 @@ netmask 255.255.255.240
 gateway 192.168.200.1
 dns-nameservers 192.168.100.2
 ```
+```
+systemctl restart networking
+```
+```
+ip -c a 
+```
 
 🖥️ BR-SRV
 ```
@@ -399,6 +424,14 @@ address 192.168.0.2
 netmask 255.255.255.224
 gateway 192.168.0.1
 ```
+
+```
+systemctl restart networking
+```
+```
+ip -c a 
+```
+
 </details>
 <br/>
 
@@ -425,27 +458,17 @@ gateway 192.168.0.1
 <summary><strong>Настройка динамической трансляции <code>NAT</code></strong></summary>
 
 ### Настройка динамической сетевой трансляции на _`ISP`_
-
-```
-echo net.ipv4.ip_forward=1 > /etc/sysctl.conf
-```
-```
-apt-get install iptables iptables-persistent –y
-```
-```
-iptables –t nat –A POSTROUTING –s 172.16.4.0/28 –o ens192 –j MASQUERADE  
-iptables –t nat –A POSTROUTING –s 172.16.5.0/28 –o ens192 –j MASQUERADE
-netfilter-persistent save
-systemctl restart netfilter-persistent  
-```  
   
 Либо другая настройка  
 ```  
-apt install iptables  
-apt install iptables iptables-persistent  
+apt install iptables iptables-persistent  -y
 iptables –t nat –A POSTROUTING –s 172.16.4.0/28 –o ens192 –j MASQUERADE   
 iptables –t nat –A POSTROUTING –s 172.16.5.0/28 –o ens192 –j MASQUERADE   
-iptables-save > /etc/iptables/rules.v4  
+iptables-save > /etc/iptables/rules.v4
+iptables –L –t nat
+systemctl restart iptables
+systemctl restart networking
+ip -c a 
 ```
   
 > **`ens192`** - интерфейс с которого приходит **интернет**
