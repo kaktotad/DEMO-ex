@@ -470,6 +470,15 @@ systemctl restart iptables
 systemctl restart networking
 ip -c a 
 ```
+перейди на <strong>HQ-RTR</strong>
+```
+ping 1.1.1.1
+```
+перейди на <strong>BR-RTR</strong>
+```
+ping 1.1.1.1
+```
+
   
 > **`ens192`** - интерфейс с которого приходит **интернет**
 > 
