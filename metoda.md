@@ -478,8 +478,11 @@ ping 1.1.1.1
 ```
 ping 1.1.1.1
 ```
-
-  
+<strong>Если нету подключения на HQ-RTR или BR-RTR, то на ISP</strong>
+```
+systemctl restart iptables
+systemctl restart networking
+```
 > **`ens192`** - интерфейс с которого приходит **интернет**
 > 
 > Для проверки можно использовать команду: **`iptables –L –t nat`** - должны высветится в Chain POSTROUTING две настроенные подсети  
