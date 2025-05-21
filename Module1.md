@@ -1102,6 +1102,7 @@ systemctl start iproute.service
 
 <br/>
 ------------------------------------------СДЕЛАЙ СНАПШОТ----------------------------------------------
+
 ## ✔️ Задание 8
 
 ### Настройка динамической трансляции адресов
@@ -1124,12 +1125,15 @@ systemctl start iproute.service
 > ### Настройка на `ISP` выполнена в [Задании 2](https://github.com/Flicks1383/Demo09.02.06_2025/tree/main/module1#задание-2)
 
 ### Настройка динамической сетевой трансляции на `HQ-RTR`
+
 ```
 apt install iptables iptables-persistent  -y
 ```
+
 ```
 iptables –t nat –A POSTROUTING –s 192.168.100.0/26 –o ens256 –j MASQUERADE
 iptables –t nat –A POSTROUTING –s 192.168.200.0/28 –o ens256 –j MASQUERADE
+```
 ```
 iptables-save > /etc/iptables/rules.v4
 iptables –L –t nat
