@@ -890,6 +890,15 @@ gre_ip
 
 ![image](https://github.com/user-attachments/assets/29e58bd1-a154-43c5-b554-a356f3164255)
 
+если вывод похож, то все ок,если нет,то проверь адреса на <code>HQ-RTR</code> и <code>BR-RTR</code>
+```
+ip -c a
+```
+```
+systemctl restart networking
+```
+
+
 </details>
 ------------------------------------------СДЕЛАЙ СНАПШОТ----------------------------------------------
 
@@ -962,6 +971,10 @@ ip ospf authentication-key password
 exit
 exit
 write
+```
+Для выхода из <code>vtysh</code>
+```
+exit
 ```
 <br>
 
