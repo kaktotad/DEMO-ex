@@ -1124,25 +1124,47 @@ systemctl start iproute.service
 
 ### Настройка динамической сетевой трансляции на `HQ-RTR`
 ```
-apt-get install iptables iptables-persistent –y
+apt install iptables iptables-persistent  -y
+```
+```
 iptables –t nat –A POSTROUTING –s 192.168.100.0/26 –o ens256 –j MASQUERADE
 iptables –t nat –A POSTROUTING –s 192.168.200.0/28 –o ens256 –j MASQUERADE
-netfilter-persistent save
-systemctl restart netfilter-persistent  
+```
+iptables-save > /etc/iptables/rules.v4
+iptables –L –t nat
+```
+
+```
+systemctl restart iptables
+systemctl restart networking
+ip -c a 
 ```
 ### Настройка динамической сетевой трансляции на `BR-RTR`
 
 ```
-apt-get install iptables iptables-persistent –y
-iptables –t nat –A POSTROUTING –s 192.168.0.0/27 –o ens224 –j MASQUERADE
-netfilter-persistent save
-systemctl restart netfilter-persistent  
+apt install iptables iptables-persistent  -y
 ```
+```
+iptables –t nat –A POSTROUTING –s 192.168.0.0/27 –o ens224 –j MASQUERADE
+```
+```
+iptables-save > /etc/iptables/rules.v4
+iptables –L –t nat
+```
+```
+systemctl restart iptables
+systemctl restart networking
+ip -c a 
+```
+
 > Для того, чтобы сбросить настройку *nat*, можно использовать команду `iptables -t nat -F`
 
 </br>
 
 </details>
+<details>
+<summary><strong>проверка работоспособности **`NAT`**</strong></summary>
+</datails>
 
 </br>
 ------------------------------------------СДЕЛАЙ СНАПШОТ----------------------------------------------
