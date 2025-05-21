@@ -1116,6 +1116,7 @@ systemctl start iproute.service
 
 <details>
 <summary><strong>Настройка NAT на <code>BR</code> и <code>HQ</code></strong></summary>
+</details>
 <br/>
 
 ## > Настройка динамической трансляции адресов <
