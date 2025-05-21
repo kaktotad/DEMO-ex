@@ -881,8 +881,14 @@ gre_ip
 </details>
 <br/>
 <details>
-  <summary><strong>Проверка GRE</strong><summary>
-  
+  <summary><strong>Проверка GRE</strong></summary>
+  На <strong> HQ-RTR</strong> вводим команду 
+  ```
+  ping 172.16.0.2
+  ```
+  команда должна выдать примерно такой вид
+- ![image](https://github.com/user-attachments/assets/29e58bd1-a154-43c5-b554-a356f3164255)
+
 </details>
 ------------------------------------------СДЕЛАЙ СНАПШОТ----------------------------------------------
 
