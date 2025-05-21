@@ -136,10 +136,15 @@ net.ipv4.ip_forward=1
   
   - Обновить имя можно введя команду: **`bash`**
 
-> <strong>ISP</strong>: ```hostnamectl set-hostname isp.au-team.irpo```
->
-> <strong>HQ-RTR</strong>: ```hostnamectl set-hostname hq-rtr.au-team.irpo```
->
+> <strong>ISP</strong>:
+```
+hostnamectl set-hostname isp.au-team.irpo
+```
+> <strong>HQ-RTR</strong>:
+```
+hostnamectl set-hostname hq-rtr.au-team.irpo
+```
+
 > <strong>BR-RTR</strong>: ```hostnamectl set-hostname br-rtr.au-team.irpo```
 >
 > <strong>HQ-SRV</strong>: ```hostnamectl set-hostname hq-srv.au-team.irpo```
