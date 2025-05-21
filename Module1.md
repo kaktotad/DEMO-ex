@@ -1268,6 +1268,15 @@ dns-nameservers 192.168.100.2
 auto ens192
 iface ens192 inet dhcp
 ```
+Далее перезапускаем сетевой интерфейс 
+```
+systemctl restart networking
+```
+и проверяем адрес
+```
+ip -c a
+```
+
 <br/>
 
 </details>
