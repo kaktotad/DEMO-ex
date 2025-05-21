@@ -1168,6 +1168,26 @@ ip -c a
 </details>
 <details>
 <summary><strong>проверка работоспособности **`NAT`**</strong></summary>
+  На HQ-SRV или HQ-CLI вводим команду 
+```
+  ping 1.1.1.1
+```
+  если пинг есть значит все ок.
+  
+  если нет, проверяем адресацию
+
+```
+ip -c a
+```
+
+```
+systemctl restart networking
+```
+и проверяем 
+
+```
+nano /etc/resolve.conf
+``` 
 </datails>
 </details>
 </br>
