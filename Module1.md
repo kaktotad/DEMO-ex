@@ -1249,7 +1249,25 @@ systemctl start isc-dhcp-server
 systemctl enable isc-dhcp-server
 ```
 
-**5.** Далее на клиенсткой машине необходимо в настройках сет.адаптера выбрать режим **DHCP** и проверить работоспособность
+**5.** Далее на HQ-CLI необходимо в настройках сет.адаптера выбрать режим **DHCP** и проверить работоспособность
+переходим в файл 
+```
+nano /etc/network/interfaces
+```
+и меняем старый конфиг
+```
+auto ens192
+iface ens192 inet static
+address 192.168.200.2
+netmask 255.255.255.240
+gateway 192.168.200.1
+dns-nameservers 192.168.100.2
+```
+на этот
+```
+auto ens192
+iface ens192 inet dhcp
+```
 <br/>
 
 </details>
