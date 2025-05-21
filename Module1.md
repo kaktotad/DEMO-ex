@@ -145,13 +145,25 @@ hostnamectl set-hostname isp.au-team.irpo
 hostnamectl set-hostname hq-rtr.au-team.irpo
 ```
 
-> <strong>BR-RTR</strong>: ```hostnamectl set-hostname br-rtr.au-team.irpo```
+> <strong>BR-RTR</strong>:
+```
+hostnamectl set-hostname br-rtr.au-team.irpo
+```
 >
-> <strong>HQ-SRV</strong>: ```hostnamectl set-hostname hq-srv.au-team.irpo```
+> <strong>HQ-SRV</strong>:
+```
+hostnamectl set-hostname hq-srv.au-team.irpo
+```
+
+> <strong>HQ-CLI</strong>:
+```
+hostnamectl set-hostname hq-cli.au-team.irpo
+```
 >
-> <strong>HQ-CLI</strong>: ```hostnamectl set-hostname hq-cli.au-team.irpo```
->
-> <strong>BR-SRV</strong>: ```hostnamectl set-hostname br-srv.au-team.irpo```
+> <strong>BR-SRV</strong>:
+```
+hostnamectl set-hostname br-srv.au-team.irpo
+```
 
 </details>
 
@@ -356,6 +368,9 @@ ip -c a
 
 🌐 ISP
 ```
+nano /etc/network/interfaces
+```
+```
 auto ens192
 iface ens192 inet dhcp
 
@@ -371,6 +386,9 @@ netmask 255.255.255.240
 ```
 
 📡 HQ-RTR
+```
+nano /etc/network/interfaces
+```
 ```
 auto ens192
 iface ens192 inet static
@@ -394,6 +412,9 @@ ip -c a
 
 📡 BR-RTR
 ```
+nano /etc/network/interfaces
+```
+```
 auto ens192
 iface ens192 inet static
 address 172.16.5.2
@@ -413,6 +434,9 @@ ip -c a
 ```
 🖥️ HQ-SRV
 ```
+nano /etc/network/interfaces
+```
+```
 auto ens192
 iface ens192 inet static
 address 192.168.100.62
@@ -427,6 +451,9 @@ ip -c a
 ```
 
 🖥️ HQ-CLI
+```
+nano /etc/network/interfaces
+```
 ```
 auto ens192
 iface ens192 inet static
@@ -443,6 +470,9 @@ ip -c a
 ```
 
 🖥️ BR-SRV
+```
+nano /etc/network/interfaces
+```
 ```
 auto ens192
 iface ens192 inet static
