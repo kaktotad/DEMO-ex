@@ -17,11 +17,23 @@
 <summary><strong>Преднастройка</strong></summary>
 Для того что бы вы могли устанавливать пакеты из интернета, скачивать все пакеты из интернета, необходимо отключить проверку пакетов через cdrom зайдя по пути
 
-- nano /etc/apt/sources.list
+```bash
+ nano /etc/apt/sources.list
+```
 
 и закомментировать находящуюся там строку (поставить знак #) перед каждой строчкой.
 
 Стало: ![image](https://github.com/user-attachments/assets/9fc5e769-7d3e-45c9-b7fa-a9f76d72d374)
+
+после чего добавим путь к репозиториям для скачивания пакетов
+
+``` bash
+deb https://deb.debian.org/debian bookworm main non-free-firmware
+deb-src https://deb.debian.org/debian bookworm main non-free-firmware
+
+deb https://deb.debian.org/debian bookworm-updates main non-free-firmware
+deb-src https://deb.debian.org/debian bookworm-updates main non-free-firmware
+```
 
 Далее необходимой перейти в файл
 
