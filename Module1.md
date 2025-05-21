@@ -522,10 +522,16 @@ ip -c a
 Либо другая настройка  
 ```  
 apt install iptables iptables-persistent  -y
-iptables –t nat –A POSTROUTING –s 172.16.4.0/28 –o ens192 –j MASQUERADE   
-iptables –t nat –A POSTROUTING –s 172.16.5.0/28 –o ens192 –j MASQUERADE   
+```
+```
+iptables –t nat –A POSTROUTING –s 172.16.4.0/28 –o ens192 –j MASQUERADE  
+iptables –t nat –A POSTROUTING –s 172.16.5.0/28 –o ens192 –j MASQUERADE
+```
+```  
 iptables-save > /etc/iptables/rules.v4
 iptables –L –t nat
+```
+```
 systemctl restart iptables
 systemctl restart networking
 ip -c a 
