@@ -37,20 +37,29 @@ deb-src https://deb.debian.org/debian bookworm-updates main non-free-firmware
 
 Далее необходимой перейти в файл
 
-- nano /etc/resolv.conf
+```bash
+nano /etc/resolv.conf
+```
+и прописать
 
-- nameserver 1.1.1.1
+```bash
+nameserver 1.1.1.1
+```
 
 Стало: ![image](https://github.com/user-attachments/assets/b750accb-0c55-4c45-b9f4-c99a9dc7106b)
 
 Далее переходим в файл 
-- nano /etc/sysctl.conf
+```
+nano /etc/sysctl.conf
+```
 
 найти строку 
 - net.ipv4.ip_forward=0
 
 и привести ее к виду (удалить знак (#) и указать в конце цифру (1) )
-- net.ipv4.ip_forward=1
+```
+net.ipv4.ip_forward=1
+```
 
 Стало: ![image](https://github.com/user-attachments/assets/bfd8fb86-d2fd-4244-8e62-b3b4c70d6397)
 </details>
