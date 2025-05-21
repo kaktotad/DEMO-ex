@@ -384,6 +384,12 @@ iface ens256 inet static
 address 172.16.5.1
 netmask 255.255.255.240
 ```
+```
+systemctl restart networking
+```
+```
+ip -c a 
+```
 
 📡 HQ-RTR
 ```
@@ -401,11 +407,9 @@ iface ens224 inet static
 address 192.168.100.1
 netmask 255.255.255.192
 ```
-
 ```
 systemctl restart networking
 ```
-
 ```
 ip -c a 
 ```
@@ -586,6 +590,8 @@ systemctl restart networking
 ```
 useradd sshuser -u 1010
 passwd sshuser
+```
+```
 P@ssw0rd
 ```
 <br/>
@@ -598,6 +604,9 @@ usermod -aG sudo sshuser
 <br/>
 
 **3.** Добавляем следующую строку в **`/etc/sudoers`**:
+```bash
+nano /etc/sudoers
+```
 ```yml
 sshuser ALL=(ALL) NOPASSWD:ALL
 ```
@@ -626,6 +635,8 @@ chmod 700 /home/sshuser
 ```
 useradd net_admin
 passwd net_admin
+```
+```
 P@$$word
 ```
 <br/>
@@ -637,6 +648,9 @@ usermod -aG sudo net_admin
 <br/>
 
 **3.** Добавляем следующую строку в **`/etc/sudoers`**:
+```bash
+nano /etc/sudoers
+```
 ```yml
 net_admin ALL=(ALL) NOPASSWD:ALL
 ```
@@ -672,6 +686,10 @@ chmod 700 /home/net_admin
 
 ## Настройка VLAN на **`HQ-RTR`**
 
+На **`HQ-RTR`** и **`ISP`** проверим что файл **`/etc/resolve.conf`** не слетел, если слетел прописываем
+```bash
+nameserver 1.1.1.1
+```
 - Для начала установи пакет _**`vlan`**_:
 
 ```
@@ -745,18 +763,26 @@ apt-get install openssh-server
 
 </br>
 
-**2.** После чего необходимо добавить строчки в файл **`/etc/ssh/sshd_config`**:
+**2.** После чего необходимо открыть файл **`/etc/ssh/sshd_config`**:
+```bash
+nano /etc/ssh/sshd_config
+```
+и добавить строчки в файл
 ```
 Port 2024
 MaxAuthTries 2
 PasswordAuthentication yes
 Banner /etc/ssh/bannermotd
-AllowUsers  sshuser
-           ^ - это TAB
+AllowUsers sshuser
+          ^ - это TAB
 ```
 <br/>
 
-**3.** После чего требуется создать файл **`/etc/ssh/bannermotd`** и привести его в следующую форму:
+**3.** После чего требуется создать файл **`/etc/ssh/bannermotd`**
+```
+nano /etc/ssh/bannermotd
+```
+и привести его в следующую форму:
 ```
 ----------------------
 Authorized access only
@@ -811,7 +837,11 @@ endpoint 172.16.5.2
 ttl 64
 ```
 
-Для работы туннеля необходимо добавить строчку в файл `/etc/modules`
+Для работы туннеля необходимо в файле `/etc/modules`
+```
+nano /etc/modules
+```
+добавить строчку
 ```
 gre_ip
 ```
@@ -900,22 +930,22 @@ vtysh
 ```
 conf t
 router ospf
-  passive-interface default
-  router-id 1.1.1.1
-  network 172.16.0.0/30 area 0
-  network 192.168.100.0/26 area 1
-  network 192.168.200.0/28 area 2
-  area 0 authentication
+passive-interface default
+router-id 1.1.1.1
+network 172.16.0.0/30 area 0
+network 192.168.100.0/26 area 1
+network 192.168.200.0/28 area 2
+area 0 authentication
 exit
 
 int gre1
-  no ip ospf network broadcast
-  no ip ospf passive
-  ip ospf authentication
-  ip ospf authentication-key password
-(config-if)exit
-(config)exit
-#write
+no ip ospf network broadcast
+no ip ospf passive
+ip ospf authentication
+ip ospf authentication-key password
+exit
+exit
+write
 ```
 <br>
 
@@ -936,21 +966,21 @@ int gre1
 ```
 conf t
 router ospf
-  passive-interface default
-  router-id 2.2.2.2
-  network 192.168.0.0/27 area 3
-  network 172.16.0.0/30 area 0
-  area 0 authentication
+passive-interface default
+router-id 2.2.2.2
+network 192.168.0.0/27 area 3
+network 172.16.0.0/30 area 0
+area 0 authentication
 exit
 
 int gre1
-  no ip ospf network broadcast
-  no ip ospf passive
-  ip ospf authentication
-  ip ospf authentication-key password
-(config-if)exit
-(config)exit
-#write
+no ip ospf network broadcast
+no ip ospf passive
+ip ospf authentication
+ip ospf authentication-key password
+exit
+exit
+write
 ```
 ------------------------------------------СДЕЛАЙ СНАПШОТ----------------------------------------------
 ### ПРОВЕРКА
